@@ -6,7 +6,12 @@ const pokWeight = document.getElementById('weight');
 const pokHeight = document.getElementById('height');
 const pokImgContainer = document.querySelector('.pictures');
 const pokType = document.querySelector('.type');
-const status = document.querySelectorAll('.status');
+const pokHp = document.getElementById('hp');
+const pokAttack = document.getElementById('attack');
+const pokDefense = document.getElementById('defense');
+const pokSpecialAttack = document.getElementById('special-attack');
+const pokSpecialDefense = document.getElementById('special-defense');
+const pokSpeed = document.getElementById('speed');
 
 const url = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon';
 
@@ -59,8 +64,13 @@ const showPok = (data) => {
     pokWeight.textContent = `Weight: ${data.weight}`;
     pokHeight.textContent = `Height: ${data.height}`;
     pokType.innerHTML = typeDisplay(data);
-    pokImgContainer.innerHTML = `<img src="${data.sprites.front_shiny}" alt="image of Pokemon ${data.name}">`
-    
+    pokImgContainer.innerHTML = `<img src="${data.sprites.front_shiny}" alt="image of Pokemon ${data.name}">`;
+    pokHp.textContent = data.stats[0].base_stat;
+    pokAttack.textContent = data.stats[1].base_stat;
+    pokDefense.textContent = data.stats[2].base_stat;
+    pokSpecialAttack.textContent = data.stats[3].base_stat;
+    pokSpecialDefense.textContent = data.stats[4].base_stat;
+    pokSpeed.textContent = data.stats[5].base_stat;
 }
 
 // event listener
