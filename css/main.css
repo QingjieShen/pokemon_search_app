@@ -101,6 +101,10 @@ h1 {
     height: 200px
 }
 
+.pictures > img {
+    height: 100%;
+}
+
 .type {
     display: flex;
 
