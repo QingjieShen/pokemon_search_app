@@ -32,6 +32,7 @@ const searchTarget = (inputValue) => {
 
 // type display
 const typeDisplay = (data) => {
+    pokType.innerHTML = "";
     let types = [];
     data.types.forEach(element => {
         types += `<p id="types">${element.type.name.toUpperCase()}</p>`
@@ -45,13 +46,13 @@ const fetchData = async () => {
         const inputValue = inputText.value;
         // console.log(url + '/' + searchTarget(inputValue));
         const res = await fetch(url + '/' + searchTarget(inputValue));
-        const data = await res.json();
-        if (!data) {
-            alert('Pokemon not found');
-        } else {
+        if (res.ok) {
+            const data = await res.json()
             showPok(data);
+            console.log(data);
+        } else {
+            alert('Pokemon not found');
         }
-        console.log(data);
     } catch (err) {
         console.log(err);
     }
