@@ -49,7 +49,6 @@ const fetchData = async () => {
         if (res.ok) {
             const data = await res.json()
             showPok(data);
-            console.log(data);
         } else {
             alert('Pokemon not found');
         }
