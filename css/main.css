@@ -101,15 +101,28 @@ h1 {
     height: 200px
 }
 
-#types {
+.type {
+    display: flex;
+
+}
+
+.type > p {
+    background-color: var(--bg-type);
+    color: var(--text-bright);
+    padding: 8px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+/* #types {
     align-self: flex-start;
     background-color: var(--bg-type);
     color: var(--text-bright);
     padding: 5px 20px;
     font-size: 0.8rem;
-    position: relative;
     
-}
+} */
 
 .attributes {
     width: 100%;
